@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+>>>>>>> 3996211fb00e3ea72a1464e7c04ee53a167aee18
 # Setup
 title:               Lanyon
 tagline:             'A Jekyll theme'
@@ -13,6 +20,7 @@ author:
   url:               https://twitter.com/mdo
   email:             markdotto@gmail.com
 
+<<<<<<< HEAD
 # Gems
 plugins:
   - jekyll-paginate
@@ -20,3 +28,6 @@ plugins:
 # Custom vars
 version:             1.1.0
 google_analytics_id: #UA-XXXX-Y
+=======
+paginate:         5
+>>>>>>> 3996211fb00e3ea72a1464e7c04ee53a167aee18
