@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-git_source(:github) { |ideook/office| "https://github.com/#{repo_name}" }
+git_source(:github) { |haeahn-dukhyun/haeahn-dukhyun.github.io| "https://github.com/#{repo_name}" }
 gem "jekyll"
 gem 'jekyll-feed'
 gem 'jemoji'
