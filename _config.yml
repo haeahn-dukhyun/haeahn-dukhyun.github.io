@@ -20,6 +20,7 @@ toc:
 
 # markdown render engine.
 markdown:         kramdown
+highlighter: rouge
 kramdown:
   auto_ids:               true
   input:                  GFM
