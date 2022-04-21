@@ -1,5 +1,5 @@
 ---
-title: 1강 Create React App으로 리액트 프로젝트 시작하기
+title: 01강 Create React App으로 리액트 프로젝트 시작하기
 date: 2022-04-21
 author: ideook
 layout: post
