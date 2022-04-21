@@ -9,7 +9,7 @@ layout: post
 
 ▶ CustomerAdd.js
 
-```
+```js
 import React from 'react'
 import { post } from 'axios';
 import Dialog from '@material-ui/core/Dialog';
@@ -148,7 +148,7 @@ export default withStyles(styles)(CustomerAdd)
 
 ▶ CustomerDelete.js
 
-```
+```js
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';

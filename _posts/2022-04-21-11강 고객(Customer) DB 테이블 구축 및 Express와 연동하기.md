@@ -11,7 +11,7 @@ layout: post
 
 데이터베이스 이름을 management로 설정했으므로 여기에 들어가서 고객 테이블을 구축하여 데이터를 넣도록 소스를 작성해보겠습니다.
 
-```
+```sql
 USE management;
 
 CREATE TABLE CUSTOMER (
@@ -44,7 +44,7 @@ SELECT * FROM CUSTOMER;
 
 이후에 database.json에서 데이터베이스 정보를 설정하시면 됩니다.
 
-```
+```json
 {
     "host": 데이터베이스 주소,
     "user": 데이터베이스 사용자,
@@ -66,7 +66,7 @@ SELECT * FROM CUSTOMER;
 
 이후에 설치된 mysql 라이브러리를 활용하여 node.js와 MySQL을 연동할 수 있습니다.
 
-```
+```js
 const fs = require('fs');
 const express = require('express');
 const bodyParser = require('body-parser');

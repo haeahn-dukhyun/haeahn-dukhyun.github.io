@@ -11,7 +11,7 @@ layout: post
 
 실제로는 데이터베이스에 있는 고객 정보를 불러오는 형태로 개발이 되어야 합니다. 하지만 일단 다음과 같이 하드코딩을 해봅시다.
 
-```
+```js
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
@@ -73,7 +73,7 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 
 비동기적으로 API 요청 기능을 수행하기 위해서 async - await 구문을 사용했습니다. 서버로부터 JSON 데이터를 받아올 때까지는 테이블에 내용을 출력하지 않다가 데이터를 모두 받아왔을 때 비로소 테이블에 내용을 채우게 됩니다.
 
-```
+```js
 import React, { Component } from 'react';
 import Customer from './components/Customer'
 import './App.css';
