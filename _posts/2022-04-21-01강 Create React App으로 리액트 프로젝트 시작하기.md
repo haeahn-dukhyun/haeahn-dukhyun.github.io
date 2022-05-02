@@ -26,24 +26,34 @@ React와 Node.js로 만드는 고객 관리 시스템 개발 강좌의 첫 번�
 node.js를 설치하면 패키지 매니저 도구 NPM이 자동으로 설치됩니다. 이를 이용해서 create-react-app를 설치하시면 됩니다.
 
 ```console
-npm install -g create-react-app
+> npm install -g create-react-app
 ```
 
 ![](../../images/2022-04-22-14-18-06.png)
 
 이제 특정한 폴더로 이동해서 React 프로젝트를 생성해주겠습니다. 명령어는 create-react-app {프로젝트 이름}입니다.
 
+우리는 'D드라이브' 로 이동하여 'management' 폴더에 react 프로젝트를 생성하겠습니다.
+
+![](../../images/2022-04-28-13-22-46.png)
+
 ```console
-npx create-react-app management
+> d:
+> npx create-react-app management
 ```
 
 ![](../../images/2022-04-22-14-26-40.png)
 
 리액트 앱을 만든 이후에는 해당 프로젝트 폴더로 이동하여 yarn start 명령어로 실행할 수 있습니다. 실행 이후에는 다음과 같이 개발 서버가 구동 중인 것을 확인할 수 있습니다.
 
-![](../../images/2022-04-22-14-28-00.png)
+```console
+> cd management
+management> npm start
+```
 
-잠시후 브라우저가 자동으로 열리며, http://localhost:3000 으로 접속되어 리액트 앱의 내용이 출력됩니다. 만약 자동실행되지 않는다면 브라우저에 주소를 입력해도 됩니다.
+![](../../images/2022-04-28-16-19-32.png)
+
+인터넷 브라우저가 자동으로 실행되고 http://localhost:3000 으로 접속되고 리액트 앱의 내용이 출력됩니다. 만약 브라우저가 켜지지 않는다면 수동으로 접속 합니다.
 
 ![](../../images/2022-04-22-14-28-17.png)
 
