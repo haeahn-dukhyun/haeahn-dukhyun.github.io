@@ -12,40 +12,40 @@ layout: post
 실제로는 데이터베이스에 있는 고객 정보를 불러오는 형태로 개발이 되어야 합니다. 하지만 일단 다음과 같이 하드코딩을 해봅시다.
 
 ```js
-const express = require('express');
-const bodyParser = require('body-parser');
+const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/api/customers', (req, res) => {
-    res.send([
-        {
-            'id': 1,
-            'image': 'https://placeimg.com/64/64/1',
-            'name': '홍길동',
-            'birthday': '961222',
-            'gender': '남자',
-            'job': '대학생'
-        },
-        {
-            'id': 2,
-            'image': 'https://placeimg.com/64/64/2',
-            'name': '나동빈',
-            'birthday': '960508',
-            'gender': '남자',
-            'job': '프로그래머'
-        },
-        {
-            'id': 3,
-            'image': 'https://placeimg.com/64/64/3',
-            'name': '이순신',
-            'birthday': '961127',
-            'gender': '남자',
-            'job': '디자이너'
-        }
-    ]);
+app.get("/api/customers", (req, res) => {
+  res.send([
+    {
+      id: 1,
+      image: "https://placeimg.com/64/64/1",
+      name: "홍길동",
+      birthday: "961222",
+      gender: "남자",
+      job: "대학생",
+    },
+    {
+      id: 2,
+      image: "https://placeimg.com/64/64/2",
+      name: "나동빈",
+      birthday: "960508",
+      gender: "남자",
+      job: "프로그래머",
+    },
+    {
+      id: 3,
+      image: "https://placeimg.com/64/64/3",
+      name: "이순신",
+      birthday: "961127",
+      gender: "남자",
+      job: "디자이너",
+    },
+  ]);
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
@@ -73,7 +73,6 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
   ...
 }
 ```
-
 
 이제 app.js 파일을 작성하여 실제로 API 서버에 접근할 수 있도록 처리하시면 됩니다.
 
@@ -116,20 +115,20 @@ const styles = () => ({
 
 class App extends Component {
   state = {
-    customers: ""
-  }
+    customers: "",
+  };
 
   componentDidMount() {
     this.callApi()
-      .then(res => this.setState({customers: res}))
-      .catch(err => console.log(err));
+      .then((res) => this.setState({ customers: res }))
+      .catch((err) => console.log(err));
   }
 
   callApi = async () => {
-    const response = await fetch('/api/customers');
+    const response = await fetch("/api/customers");
     const body = await response.json();
     return body;
-  }
+  };
 
   render() {
     const { classes } = this.props;
@@ -147,9 +146,23 @@ class App extends Component {
             </TableRow>
           </TableHead>
           <TableBody>
-            {this.state.customers ? this.state.customers.map(c => {
-              return <Customer key={c.id} id={c.id} image={c.image} name={c.name} birthday={c.birthday} gender={c.gender} job={c.job} />
-            }) : <TableRow/>}
+            {this.state.customers ? (
+              this.state.customers.map((c) => {
+                return (
+                  <Customer
+                    key={c.id}
+                    id={c.id}
+                    image={c.image}
+                    name={c.name}
+                    birthday={c.birthday}
+                    gender={c.gender}
+                    job={c.job}
+                  />
+                );
+              })
+            ) : (
+              <TableRow />
+            )}
           </TableBody>
         </Table>
       </Paper>

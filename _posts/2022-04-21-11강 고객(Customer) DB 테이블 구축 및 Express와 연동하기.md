@@ -33,8 +33,6 @@ SELECT * FROM CUSTOMER;
 
 ![](../../images/2022-04-21-11-42-30.png)
 
-
-
 ※ .gitignore ※
 
 이제 데이터베이스와 연동하는 작업을 처리하도록 하겠습니다. 기본적으로 데이터베이스 관련 정보는 Git Ignore 처리를 해서 깃 허브(Git Hub)에 올라가지 않도록 처리해야 합니다. 따라서 서버 프로그램의 .gitignore 파일을 다음과 같이 수정합니다.
@@ -69,34 +67,31 @@ SELECT * FROM CUSTOMER;
 이후에 설치된 mysql 라이브러리를 활용하여 node.js와 MySQL을 연동할 수 있습니다.
 
 ```js
-const fs = require('fs');
-const express = require('express');
-const bodyParser = require('body-parser');
+const fs = require("fs");
+const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const data = fs.readFileSync('./database.json');
+const data = fs.readFileSync("./database.json");
 const conf = JSON.parse(data);
-const mysql = require('mysql');
+const mysql = require("mysql");
 
 const connection = mysql.createConnection({
-    host: conf.host,
-    user: conf.user,
-    password: conf.password,
-    port: conf.port,
-    database: conf.database
+  host: conf.host,
+  user: conf.user,
+  password: conf.password,
+  port: conf.port,
+  database: conf.database,
 });
 connection.connect();
 
-app.get('/api/customers', (req, res) => {
-    connection.query(
-        'SELECT * FROM CUSTOMER',
-        (err, rows, fields) => {
-            res.send(rows);
-        }
-    )
+app.get("/api/customers", (req, res) => {
+  connection.query("SELECT * FROM CUSTOMER", (err, rows, fields) => {
+    res.send(rows);
+  });
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
